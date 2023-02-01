@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const AnimPurple = keyframes` 
  0% {
@@ -30,10 +31,42 @@ export const AnimOrange = keyframes`
   }
 
 `
-export const Container = styled.div`
-    width: 100%;
-    position: relative;
+
+export const AnimBlue = keyframes`
+  0%{
+    transform: translate(0, 110%);
+    opacity: 0;
+  }
+  100%{
+    transform: translate(0, 0%);
+    opacity: 1;
+  }
 `
+export const AnimBlur = keyframes`
+  0%{
+    transform: translate(0, -110%);
+    opacity: 0;
+  }
+  100%{
+    transform: translate(0, 0%);
+    opacity: 1;
+  }
+`
+
+export const Landing = styled.div`
+  overflow-x: hidden;
+`
+
+export const SeccionBlue = styled.div`
+  width: 100%;
+  height: 100vh;
+  background: rgb(37,35,60);
+  background: linear-gradient(90deg, rgba(37,35,60,1) 0%, rgba(56,62,164,1) 44%, rgba(0,114,255,1) 100%); 
+  animation: ${AnimBlue} 0.4s;
+  border-radius: 0% 0% 50% 50%;
+  z-index: 3px;
+`
+
 
 export const SeccionOrgange = styled.div`
     border-radius: 0% 100% 72% 28% / 100% 0% 100% 0% ;
@@ -41,7 +74,8 @@ export const SeccionOrgange = styled.div`
     width:50%;
     height: 100vh;
     float: left;
-    animation: ${AnimOrange} 3s;
+    animation: ${AnimOrange} 5s;
+    z-index: 30px;
 `
 
 export const SeccionPurple = styled.div`
@@ -50,7 +84,9 @@ export const SeccionPurple = styled.div`
     height: 100vh;
     border-radius: 100% 0% 34% 66% / 0% 100% 0% 100% ;
     float: right;
-    animation: ${AnimPurple} 3s;
+    animation: ${AnimPurple} 5s;
+    z-index: 30px;
+
 `
 
 
@@ -63,19 +99,26 @@ export const LandingContent = styled.div`
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    margin: 25%;
-`
-
-
-export const Title = styled.h1 `
-    color: white;
-    font-size: 10vh;
-`
-
-export const Yellow = styled.span`
-    background-color: #F5C518;
-    padding: 2vh;
-    border-radius: 50px;
-    color: #000;
+    margin: 20%;
+    animation: ${AnimBlur} 5s;
+    padding: 10vh;
     
+  &:hover{
+    background: rgba( 245, 197, 24, 0.75 );
+  }
+`
+
+export const Enter = styled(Link)`
+  text-decoration: none;
+  font-size: 10vh;
+  font-family: monospace;
+  color: white;
+  font-weight: bolder;
+  cursor: none!important;
+`
+export const HorizontalLine = styled.div`
+  width: 90%;
+  margin: 80px auto;
+  border: 1px solid #F3B622;
+  border-radius: 50%;
 `

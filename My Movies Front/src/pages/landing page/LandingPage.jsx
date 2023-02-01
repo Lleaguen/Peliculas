@@ -1,16 +1,26 @@
 import React from "react";
-import { Title, SeccionPurple, LandingContent, Yellow, SeccionOrgange } from "../styles/LandingPage";
-
+import {  SeccionPurple, LandingContent,  SeccionOrgange, SeccionBlue, Enter, HorizontalLine, Landing } from "../styles/LandingPage";
+import NavBarLanding from "../../components/NavBar";
+import IndicateScroll from "../../components/IndicateScroll";
+import  MoreContent from '../../components/MoreContentForLanding';
 
  function LandingPage(){
     return(
-        <div>
-            <SeccionOrgange/>
-            <SeccionPurple/>
-            <LandingContent>
-                 <Title>API <Yellow> IMDb</Yellow></Title>
-            </LandingContent>
-        </div>
+        <Landing>
+            <div>
+                <SeccionOrgange/>
+                <IndicateScroll/>
+                <SeccionPurple/>
+                <LandingContent>
+                    <Enter>Enter Now!</Enter>
+                </LandingContent>
+                <NavBarLanding/>
+                <SeccionBlue/>
+            </div>
+            <HorizontalLine/>
+            <MoreContent/>
+
+        </Landing>
     )
 }
 
