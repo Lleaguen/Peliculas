@@ -20,6 +20,19 @@ export const rotate = keyframes`
     }
 `
 
+export const opacity = keyframes`
+ 0%{
+    display: none;
+    transition: 10s;
+ }
+ 50%{
+    display:none;
+ }
+ 100%{
+    opacity:1;
+    transition: 10s;
+ }
+`
 
 export const Arrow = styled.div`
    display: flex;
@@ -28,6 +41,7 @@ export const Arrow = styled.div`
    position: absolute;
    right: 3vh;
    top: 80vh;
+   animation: ${opacity} 10s;
 `
 
 export const Line = styled.div`

@@ -20,18 +20,22 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <div class="cursor"></div>
+    <div class="cursor">
+    </div>
 
     <style>
       .cursor{
-        width: 20px;
-        height: 20px;
-        border: 10px solid  rgba( 255, 255, 255, 0.75 );;
-        background: rgb(180, 87, 87);
-        border-radius: 50%;
+        width: 5px;
+        height: 5px;
+        border: 20px solid  rgba(255, 255, 255, 0.473); 
+        background-color: rgba(214, 214, 214, 0.11);
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.50);
+        border-radius: 50% ;
         position: absolute;
         pointer-events: none;
+        transform: scale(1.5);
       }
+
       .has-custom-cursor{
         
           cursor: none!important;
@@ -42,8 +46,11 @@
     <script>
       const hasCustomCursorClass = 'has-custom-cursor';
       const cursor = document.querySelector('.cursor');
+      const contrast = document.querySelector('.contrast');
       document.addEventListener('mousemove', e => {
         cursor.setAttribute("style", "top: " + (e.pageY -10) + "px; left: " + (e.pageX - 15) + "px;");
+        contrast.setAttribute("style", "top: " + (e.pageY -40) + "px; left: " + (e.pageX - 15) + "px;");
+
         
       })
       
@@ -52,7 +59,9 @@
       </script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init();
+    AOS.init({
+      duration: 2000
+    });
   </script>
   </body>
 </html>

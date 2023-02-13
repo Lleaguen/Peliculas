@@ -1,5 +1,4 @@
 import styled, { keyframes } from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const AnimPurple = keyframes` 
  0% {
@@ -99,26 +98,61 @@ export const LandingContent = styled.div`
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    margin: 20%;
+    margin: 10% 20%;
     animation: ${AnimBlur} 5s;
     padding: 10vh;
     
-  &:hover{
-    background: rgba( 245, 197, 24, 0.75 );
-  }
+
 `
 
-export const Enter = styled(Link)`
-  text-decoration: none;
-  font-size: 10vh;
-  font-family: monospace;
-  color: white;
-  font-weight: bolder;
-  cursor: none!important;
-`
+
+
 export const HorizontalLine = styled.div`
   width: 90%;
   margin: 80px auto;
   border: 1px solid #F3B622;
   border-radius: 50%;
+  `
+export const Header = styled.div`
+  overflow-y: hidden;
+  `
+
+export const FormAccount = styled.form`
+  width: 100%;
+  
+`
+export const ChangeForm = styled.button`
+  padding: 10px 40px;
+  border-radius: 5px;
+  font-size: 3vh;
+  border: none;
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 700;
+  background: #E78941;
+  cursor: none;
+  &:hover{
+    background-color: #A87FCF;
+  }
+`
+export const ContentButton = styled.div`
+  display: flex;
+  justify-content: space-around;
+  margin: 2vh;
+`
+
+export const FormLogin = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+export const LabelLogin = styled.div`
+  font-size: 4vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  margin: 2vh;
+`
+export const FirstLetter = styled.span`
+  color: #E78941;
 `

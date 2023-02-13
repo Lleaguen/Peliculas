@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-
+import { Link } from 'react-scroll';
 
 export const AnimBlur = keyframes`
   0%{
@@ -35,8 +35,8 @@ export const Title = styled.h1 `
 `
 
 
-export const Contact = styled.a`
-    background-color: #F5C518;
+export const Contact = styled(Link)`
+    background-color: #EA8B42;
     height: 5vh;
     text-decoration: none;
     margin: 1.5vh;
@@ -50,4 +50,8 @@ export const Contact = styled.a`
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     cursor: none!important;
     }
+`
+export const Img = styled.img`
+  width: 10vh;
+  margin: 0px 1vh;
 `

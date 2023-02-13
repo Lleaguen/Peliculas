@@ -1,12 +1,12 @@
 import React from "react";
-import { Title, Nav, Contact } from "./styles/Navbar";
-import Logo from "./Logo";
+import { Title, Nav, Contact, Img } from "./styles/Navbar";
+import Logo from "./assets/logo.png"
 
 export default function NavBarLanding(){
     return(
         <Nav>
-             <Title><Logo /> Movies</Title>
-             <Contact href="mailto:lleaguen99@gmail.com">Contact</Contact>
+             <Title><Img src={Logo} alt="logo" /> Movies</Title>
+             <Contact to="contact" activeClass="active"  spy={true} smooth={true} offset={0} duration={3000}>Contact</Contact>
         </Nav>
     )
 }

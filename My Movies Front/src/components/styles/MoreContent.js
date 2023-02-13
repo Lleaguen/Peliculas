@@ -66,12 +66,157 @@ export const Highlight = styled.span`
     color: #EA8B42;
 `
 
-export const ContactForm = styled.form`
+
+export const ContentForm = styled.div`
     width: 90%;
     background-color: #fff;
+    margin:  100px auto;
+    cursor:none;
+
+    &:hover{
+        cursor:none;
+    }
+
+`   
+
+export const ContactForm = styled.form`
+    display: flex;
+    justify-content: center;
     margin: auto;
+    cursor:none;
+
+    &:hover{
+        cursor:none;
+    }
+
 `
+export const FullName = styled.div`
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    cursor:none;
+
+    &:hover{
+        cursor:none;
+    }
+`
+export const First = styled.div`
+    display: flex;
+    flex-direction: column;
+    cursor:none;
+
+    &:hover{
+        cursor:none;
+    }
+`
+
+
 export const Cajas = styled.input`
-    padding: 10px 40px;
+    padding: 15px 10px;
+    width: 50%;
+    margin: 10px auto;
+    border-radius: 10px;
+    border-style:none;
+    font-size: 2vh;
+    border: 2px solid #F5C518;
+    cursor:none;
+
+    &:focus{
+        border:2px solid transparent;
+    }
+    &:hover{
+        cursor:none;
+    }
+`
+
+export const EmailContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    cursor:none;
+
+    &:hover{
+        cursor:none;
+    }
     
+`
+export const Email = styled.input.attrs({ type: 'email' })`
+    padding: 15px 10px;
+    font-size: 2vh;
+    width: 50%;
+    margin:10px auto;
+    border-radius: 10px;
+    border-style:none;
+    border: 2px solid #F5C518;
+    cursor:none;
+
+    &:focus{
+        border:2px solid transparent;
+    }
+    &:hover{
+        cursor:none;
+    }
+    `
+export const MessageContent = styled.div`
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    cursor:none;
+
+    &:hover{
+        cursor:none;
+    }
+`
+
+export const CajaMensaje = styled.textarea`
+    width: 90%;
+    margin: auto;
+    height: 15vh;
+    max-height: 15vh;
+    min-height: 15vh;
+    max-width: 90%;
+    min-width: 90%;
+    border-radius: 10px;
+    border-style:none;
+    border: 2px solid #F5C518;
+    padding: 15px 10px;
+    font-size: 2vh;
+    cursor:none;
+    
+    &:focus{
+        border:2px solid transparent;
+    }
+    &:hover{
+        cursor:none;
+    }
+`
+export const Button = styled.input.attrs({ type: 'submit' })`
+    margin: 3vh;
+    width: 30%;
+    margin: auto;
+    padding: 15px 0px;
+    letter-spacing: 1vh;
+    font-weight: bolder;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color:white;
+    background-color: #EA8B42;
+    border-radius: 10px;
+    border: none;
+    cursor:none;
+
+    &:hover{
+        background-color: #A87FCF;
+        cursor:none;
+    }
+
+`
+
+export const Label = styled.label`
+    font-family:  'Alfa Slab One';
+    margin: 1.5vh 0px;
+    color: #535363;
+    cursor:none;
+
+    &:hover{
+        cursor:none;
+    }
 `
