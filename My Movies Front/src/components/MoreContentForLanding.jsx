@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import { Container, VerticalLine, Section, Article, Article2,  Image, SubTitle, Title, Highlight } from "./styles/MoreContent";
 import { ContactForm, Cajas, Email, CajaMensaje, Button, FullName, First, ContentForm, MessageContent, Label } from './styles/MoreContent';
 import { HorizontalLine } from "../pages/styles/LandingPage";
@@ -9,22 +9,20 @@ export default function MoreContent(){
     const Reset = () =>{
         const form = document.getElementById("contact");
         form.addEventListener("submit", (e) => {
-            e.preventDefault();
-            form.reset();
+            setTimeout(() => { 
+                e.preventDefault();
+                form.reset();
+            }, 4000);
         })
     }
-    const [ error, setError ] = useState(false);
+    const form = useRef();
     const sendEmail = (e) => {
         e.preventDefault();
-        if(!e.target){
-            emailjs.sendForm('service_x99077l', 'template_f6iqayq', e.target, '9Rgh8y6Xd1nGkj-2S')
+            emailjs.sendForm("service_x99077l", "template_f6iqayq", form.current, 
+            "9Rgh8y6Xd1nGkj-2S")
             .then(Response => alert(Response))
-        
-    }else{
-
-       alert("error")
-    }
-} 
+            .catch(error => alert(error))
+    } 
     return(
         <div>
             <Container>
@@ -46,23 +44,23 @@ export default function MoreContent(){
             </Container>
             <HorizontalLine/>
             <ContentForm data-aos="fade-up" >
-                <ContactForm onSubmit={sendEmail} id="contact">
+                <ContactForm ref={form} onSubmit={sendEmail} id="contact">
                     <FullName data-aos="fade-up">
                         <First data-aos="fade-up">
                             <Label htmlFor="FirstName" data-aos="fade-up"><Highlight>First</Highlight> Name</Label>
-                            <Cajas type="text" id="FirstName" name="user_Fname" placeholder="First Name" data-aos="fade-up"/>
+                            <Cajas type="text"  name="user_Fname" placeholder="First Name" data-aos="fade-up"/>
                         </First>
                         <First data-aos="fade-up">    
                             <Label htmlFor="LastName" data-aos="fade-up"><Highlight>Last</Highlight> Name</Label>
-                            <Cajas type="text" id="LastName" name="user_Lname" placeholder="Last Name" />
+                            <Cajas type="text"  name="user_Lname" placeholder="Last Name" />
                         </First>
                         <Label htmlFor="email" data-aos="fade-up"><Highlight>E-</Highlight>mail</Label>
                         <Email type="email" id="email" name="user_email" placeholder="example@mail.com" data-aos="fade-up"/>
                     </FullName>
                     <MessageContent data-aos="fade-up">
                         <Label htmlFor="Message" data-aos="fade-up"><Highlight>Your</Highlight> Message</Label>
-                        <CajaMensaje type="text" id="Message" name="user_message" placeholder="Your message..." data-aos="fade-up"/>
-                    <Button type="submit" value="SUBMIT"  onClick={() => Reset()} />
+                        <CajaMensaje type="text" name="user_message" placeholder="Your message..." data-aos="fade-up"/>
+                    <Button type="submit" value="SUBMIT" onClick={() => Reset()} />
                     </MessageContent>
                 </ContactForm>
             </ContentForm>

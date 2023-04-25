@@ -147,7 +147,7 @@ export const FormLogin = styled.div`
 `
 
 export const LabelLogin = styled.div`
-  font-size: 4vh;
+  font-size: 3vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 700;
   color: #fff;
@@ -155,4 +155,50 @@ export const LabelLogin = styled.div`
 `
 export const FirstLetter = styled.span`
   color: #E78941;
+`
+
+export const Box = styled.input`
+    padding: 10px 5px;
+    width: 40%;
+    margin: 5px auto;
+    border-radius: 10px;
+    border-style:none;
+    font-size: 2vh;
+    border: 2px solid #F5C518;
+    cursor:none;
+
+    &:focus{
+        border:2px solid transparent;
+    }
+    &:hover{
+        cursor:none;
+    }
+`
+
+export const LoginButton = styled.button`
+    cursor:none;
+    font-size: 3vh;
+    padding 10px 5px;
+    width 20%;
+    background: #E78941;
+    border:none;
+    border-radius: 5px;
+    color: #FFF;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    margin: 2vh auto;
+`
+export const RegisterButton = styled.button`
+    cursor:none;
+    font-size: 3vh;
+    padding 10px 5px;
+    width 20%;
+    background: #E78941;
+    border:none;
+    border-radius: 5px;
+    color: #FFF;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    margin: 2vh auto;
+    margin-bottom: -4vh;
 `

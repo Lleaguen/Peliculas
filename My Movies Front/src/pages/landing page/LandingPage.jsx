@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { Header, SeccionPurple, LandingContent,  SeccionOrgange, SeccionBlue, FormAccount, HorizontalLine, Landing, FormLogin } from "../styles/LandingPage";
-import { ChangeForm, ContentButton, LabelLogin, FirstLetter } from "../styles/LandingPage";
+import { ChangeForm, ContentButton, LabelLogin, FirstLetter, RegisterButton, LoginButton, Box } from "../styles/LandingPage";
 import NavBarLanding from "../../components/NavBar";
 import IndicateScroll from "../../components/IndicateScroll";
 import  MoreContent from '../../components/MoreContentForLanding';
 import Footer from "../../components/Footer";
-import { Cajas } from "../../components/styles/MoreContent";
 
  function LandingPage(){
 
@@ -36,25 +35,23 @@ import { Cajas } from "../../components/styles/MoreContent";
                         </ContentButton>   
                         {login && 
                             <FormLogin>
-                                <LabelLogin><FirstLetter>E</FirstLetter>-mail</LabelLogin>
-                                <Cajas type="email" placeholder="Your mail..."/>
+                                <LabelLogin><FirstLetter>E-</FirstLetter>mail</LabelLogin>
+                                <Box type="email" placeholder="Your mail..."/>
                                 <LabelLogin><FirstLetter>P</FirstLetter>assword</LabelLogin>
-                                <Cajas type="password"  placeholder="Your password..."/>
+                                <Box type="password"  placeholder="Your password..."/>
+                                <LoginButton>Login</LoginButton>
                             </FormLogin>
                         }
                         {create && 
-                            <div>
-                                <label htmlFor="">First Name</label>
-                                <input type="text" name="" id="" />
-                                <label htmlFor="">Last Name</label>
-                                <input type="text" name="" id="" />
-                                <label htmlFor="">email</label>
-                                <input type="text" name="" id="" />
-                                <label htmlFor="">password</label>
-                                <input type="text" name="" id="" />
-                                <label htmlFor="">confirm password</label>
-                                <input type="text" name="" id="" />
-                            </div>
+                            <FormLogin>
+                                <LabelLogin htmlFor=""><FirstLetter>E-</FirstLetter>mail</LabelLogin>
+                                <Box type="text" name="" id="" placeholder="Your mail..."/>
+                                <LabelLogin htmlFor=""><FirstLetter>P</FirstLetter>assword</LabelLogin>
+                                <Box type="text" name="" id="" placeholder="Your password..."/>
+                                <LabelLogin htmlFor=""><FirstLetter>Confirm</FirstLetter> password</LabelLogin>
+                                <Box type="text" name="" id="" placeholder="Your confirmation..."/>
+                                <RegisterButton>Register</RegisterButton>
+                            </FormLogin>
                         }
                     </FormAccount>
                 </LandingContent>

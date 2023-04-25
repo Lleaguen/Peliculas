@@ -46,10 +46,8 @@
     <script>
       const hasCustomCursorClass = 'has-custom-cursor';
       const cursor = document.querySelector('.cursor');
-      const contrast = document.querySelector('.contrast');
       document.addEventListener('mousemove', e => {
         cursor.setAttribute("style", "top: " + (e.pageY -10) + "px; left: " + (e.pageX - 15) + "px;");
-        contrast.setAttribute("style", "top: " + (e.pageY -40) + "px; left: " + (e.pageX - 15) + "px;");
 
         
       })
