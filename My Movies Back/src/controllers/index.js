@@ -3,6 +3,7 @@ const { API_KEY} = process.env;
 const movies = require('../routes/index.js');
 const URL = `https://imdb-top-100-movies.p.rapidapi.com/?rapidapi-key=${API_KEY}`;
 
+
 const getInfoMovies = async () => {
     const apiURL = await axios.get(URL);
     const apiInfo = await apiURL.data.map(e => {
@@ -24,6 +25,14 @@ const getInfoMovies = async () => {
     return apiInfo;
 };
 
+const getUsers = async (req, res) => {
+}
+
+const createUser = async (req, res) => {
+    res.send("user created");
+};
 module.exports = { 
-    getInfoMovies
+    getInfoMovies,
+    getUsers,
+    createUser
 }

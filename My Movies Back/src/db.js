@@ -7,7 +7,7 @@ const { DB_HOST, DB_PORT, DB_USER, DB_PASS, DB_NAME } = process.env;
 
 let sequelize = process.env === "production" ? 
 new Sequelize({
-    database: "my_moves",
+    database: "my_movies",
     dialect: "postgres",
     host: DB_HOST,
     port: DB_PORT,
@@ -37,9 +37,11 @@ let capsEntries = entries.map((entry) => [entry[0][0].toUpperCase() + entry[0].s
 sequelize.models = Object.fromEntries(capsEntries);
 
 
-const { Movies } = sequelize.models;
+const { Movies, Users } = sequelize.models;
 
 Movies.hasOne(Movies, { through: "movies", timestamps:false });
+Users.hasOne(Users, { through: "users", timestamps:false });
+
 
 module.exports = {
     ...sequelize.models,

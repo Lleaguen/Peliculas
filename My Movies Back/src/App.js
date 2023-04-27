@@ -4,16 +4,13 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const routes = require("./routes/index.js");
 
-const dbConfig = {
-    host: process.env.DB_HOST || "localhost", 
-    port: process.env.DB_PORT || "5432",
-    user: process.env.DB_USER || "postgres",
-    password: process.env.DB_PASS || "main",
-    database: process.env.DB_NAME || "my_movies", 
-}
+ 
+
 
 
 const server = express();
+
+server.name = 'API';
 
 server.use(express.json());
 server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));

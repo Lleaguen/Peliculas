@@ -1,45 +1,26 @@
-const { Router } = require("express");
-const { getInfoMovies } = require('../controllers/index.js');
-const Movies = require("../models/Movies.js");
+const { Router } = require('express');
+const {  getInfoMovies, getUsers, createUser } = require("../controllers/index")
+// Importar todos los routers;
+// Ejemplo: const authRouter = require('./auth.js');
+const { Users, Movies} = require('../db')
 const router = Router();
+const axios = require('axios');
+const {Sequelize, Model} = require('sequelize');
+const express = require('express');
 
-router.get('/movies', async (req, res) => {
-    const name = req.query.name;
-    const movies = await getInfoMovies();
-    try{
-        if(name) {
-            const movieSelected = movies.filter((movie) => movie.name.toLoweCase().includes(name.toLocaleLowerCase()))
-            if(movieSelected.length){
-                return res.status(200).send(movieSelected)
-            } else {
-                return res.status(404).send({error: 'The movie has not exist.'})
-            }
-        } else{
-            return res.status(201).json(movies)
-        }
-    } catch(error){
-        return res.status(404).send({error: 'The movie has not exist.'})
-    }
-})
 
-router.post('/movies', async (req, res) => {
-    let{
-        id,
-        title,
-        rank,
-        rating,
-        year,
-        director,
-        writers,
-        genre,
-        trailer,
-        description,
-        image,
-        thumbnail
-    } = req.body;
-
-    const movieChecked = await Movies.findOne({
-        where: { title: title }
-    })
-})
+router.post("/users", async (req, res) =>{
+    const { email, password } = req.body;
+     const userCheck = await Users.findOne({
+         where: { email: email} 
+     })
+     if(userCheck){
+         return res.status(400).send('The user already exist');
+     } else {
+         await Users.create({
+            email, password
+        })
+        return res.status(200).send('The user has been created');
+     }
+} );
 module.exports = router;
